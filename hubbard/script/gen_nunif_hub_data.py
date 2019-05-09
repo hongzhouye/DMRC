@@ -23,9 +23,7 @@ def get_hd_list(nsample, nsite, sigma):
 
 def run_Hubbard(nsite, nocc, U, hd):
     h, V = get_Hubbard(nsite, U, nocc)
-    hh = np.einsum("ii->i", h)
-    hh += hd
-    del hh
+    h += np.diag(hd)
 
     lat = lattice.LATTICE(h=h, V=V, nocc=nocc)
     mc = fci.FCI(lat)
@@ -92,7 +90,7 @@ if __name__ == "__main__":
     nsample = int(sys.argv[5])
     outpath = sys.argv[6]
 
-    np.random.seed(17)
+    # np.random.seed(17)
 
     # print command-line args
     print_cmd_args(nsite, nocc, U, sigma, nsample, outpath)

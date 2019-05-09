@@ -106,7 +106,8 @@ def sanity_check_Hubbard(data):
 
 
 def check_all():
-    parent_path = "../data/"
+    # parent_path = "../data/"
+    parent_path = "../data2/"
     nsite_list = [10, 12]
     sigma_list = [0.1, 0.3, 0.5, 1.0]
     U_list = [1, 4, 8]

@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# slurm
+sbatch.err
+sbatch.out
+submit.sh
